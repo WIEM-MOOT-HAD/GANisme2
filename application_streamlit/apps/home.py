@@ -2,29 +2,19 @@
 # -*- coding: utf-8 -*-
 
 
-from dash import dcc
 from dash import html
-import dash_bootstrap_components as dbc
-from dash.dependencies import Input, Output, State
-from app import app, server
-import datetime
-#from skimage.transform import resize
-import pickle
-from PIL import Image
-import base64
-from io import BytesIO
-import numpy as np
+#import dash_bootstrap_components as dbc
+from dash import dbc
+from dash.dependencies import Input, Output
+from app import app
+#from skimage.transform import resizepip3 install "pyzmq==17.0.0" "ipykernel==4.8.2"
 
-import matplotlib.pyplot as pyplot
-import os
 import tensorflow as tf
 import numpy as np
 import matplotlib.pyplot as plt
 
 from tensorflow import keras
-from tensorflow.keras import layers
 
-from numpy.random import randn
 
 
 def generate_latent_points(batch_size, latent_dim ):
@@ -80,12 +70,12 @@ def on_button_click(n):
     else:
         im = None
         model = keras.models.load_model('/home/wiem/Documents/PROJET/GANisme/application_streamlit/assets/generator-400x400.h5')
-	model.compile()
-	latent_points = generate_latent_points(20, 400)
+        model.compile()
+        latent_points = generate_latent_points(20, 400)
         generated_images = model.predict(latent_points)
 
 
-        im = Image.open("plot.png")
+
     
         return html.Div([
             html.Img(src=im, style={'height':'100%', 'width':'100%'}),
