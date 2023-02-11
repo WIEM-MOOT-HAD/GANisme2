@@ -1,4 +1,4 @@
 dash
 numpy
 tensorflow
-matplotlib.pyplot
+matplotlib
