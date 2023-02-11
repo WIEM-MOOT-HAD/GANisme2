@@ -3,11 +3,10 @@
 
 
 from dash import html
-#import dash_bootstrap_components as dbc
-from dash import dbc
+import dash_bootstrap_components as dbc
+
 from dash.dependencies import Input, Output
 from app import app
-#from skimage.transform import resizepip3 install "pyzmq==17.0.0" "ipykernel==4.8.2"
 
 import tensorflow as tf
 import numpy as np
