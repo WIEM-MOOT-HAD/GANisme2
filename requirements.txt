@@ -2,3 +2,4 @@ dash
 numpy
 tensorflow
 matplotlib
+dash-bootstrap-components
