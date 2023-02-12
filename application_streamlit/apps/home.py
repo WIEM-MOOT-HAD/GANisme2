@@ -14,6 +14,7 @@ import matplotlib.pyplot as plt
 
 from tensorflow import keras
 
+TF_CPP_MIN_LOG_LEVEL="2"
 
 
 def generate_latent_points(batch_size, latent_dim ):
