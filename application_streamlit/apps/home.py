@@ -69,10 +69,10 @@ def on_button_click(n):
         return "Not clicked."
     else:
         im = None
-        model = keras.models.load_model('/home/wiem/Documents/PROJET/GANisme/application_streamlit/assets/generator-400x400.h5')
-        model.compile()
-        latent_points = generate_latent_points(20, 400)
-        generated_images = model.predict(latent_points)
+        #model = keras.models.load_model('/assets/generator-400x400.h5')
+        #model.compile()
+        #latent_points = generate_latent_points(20, 400)
+        #generated_images = model.predict(latent_points)
 
 
 
