@@ -13,9 +13,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 from tensorflow import keras
+from PIL import Image
+
 
 TF_CPP_MIN_LOG_LEVEL="2"
-
 
 def generate_latent_points(batch_size, latent_dim ):
 	random_latent_vectors = tf.random.normal(shape=(batch_size, latent_dim))
@@ -69,12 +70,14 @@ def on_button_click(n):
         return "Not clicked."
     else:
         im = None
-        #model = keras.models.load_model('/assets/generator-400x400.h5')
-        #model.compile()
-        #latent_points = generate_latent_points(20, 400)
-        #generated_images = model.predict(latent_points)
-
-
+        model = keras.models.load_model('/home/wiem/Documents/PROJET/GANisme/application_streamlit/assets/model_64X64.h5')
+        model.compile()
+        latent_points = generate_latent_points(20, 64)
+        generated_images = model.predict(latent_points)
+        plt.switch_backend('Agg')
+        plot_generated(generated_images)
+        im = Image.open("plot.png")
+        
 
     
         return html.Div([
